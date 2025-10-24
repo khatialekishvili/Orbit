@@ -47,13 +47,13 @@
       <div class="cards-grid">
         @for (p of posts(); track p.id) {
           <article class="post-card">
-            <header class="post-card__head">
-              <h3 class="post-card__title" title="{{ p.title }}">{{ p.title }}</h3>
+            <header class="post-card_head">
+              <h3 class="post-card_title" title="{{ p.title }}">{{ p.title }}</h3>
             </header>
 
-            <p class="post-card__body">{{ p.body }}</p>
+            <p class="post-card_body">{{ p.body }}</p>
 
-            <footer class="post-card__foot">
+            <footer class="post-card_foot">
               <button class="ghost" (click)="openDetails(p)">Details</button>
             </footer>
           </article>

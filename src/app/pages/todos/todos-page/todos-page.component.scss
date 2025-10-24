@@ -23,6 +23,7 @@
 .todo-list {
   list-style: none;
   margin: 12px 0;
+  max-width: 800px;
   padding: 0;
   display: grid;
   gap: 12px;
@@ -81,7 +82,10 @@
 .error { color: #ffb3b3; }
 .muted { color: #8DA1C3; }
 
-// @media (max-width: 720px) {
-//   .todo { padding: 12px 12px 12px 44px; }
-//   .title { font-size: 13px; }
-// }
+
+
+@media (max-width: 720px) {
+  .todo-list {
+    max-width: 449px;
+  }
+}
