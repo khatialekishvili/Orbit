@@ -1,59 +1,59 @@
-# AngularTask
+## Orbit – Angular 19 Responsive Dashboard App  
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+A feature-rich Angular 19 web application that integrates dynamic user, post, todo, and promotion pages — including an interactive spinning wheel and leaderboard.  
+The project demonstrates clean architecture, modular structure, and full responsiveness with Angular 19’s modern syntax (`@if`, `@for`, standalone components, and signals).
 
-## Development server
+## Overview  
+Orbit is a complete Angular project designed as a dynamic dashboard.  
+It connects to the **JSONPlaceholder API** to fetch users, posts, and todos — while also including a custom **Promotions page** with interactive features (spinning wheel + leaderboard).  
+Every component is built using **standalone Angular components**, **signals**, and the new `@if` / `@for` syntax introduced in Angular 17+.
 
-To start a local development server, run:
+## How to run:
+1. npm install
+2. ng serve
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Application Structure  
+The app layout consists of several key blocks:  
 
-## Code scaffolding
+- **Header** – Displays the site name (linked to home) and the current date & time (updates dynamically).  
+- **Sidebar Navigation** – Positioned on the left, includes buttons for:
+  - 🧍‍♂️ Users  
+  - 📝 Posts  
+  - 🎯 Promotions  
+  - (Collapses into a **burger menu** on small screens).  
+- **Main Content (Table/Card Section)** – Dynamically displays data depending on the selected route.  
+- **Footer** – Fixed at the bottom and centered, showing © 2025 Orbit.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Page | Purpose | Key Features |
+|------|----------|--------------|
+| **Users** | View all users | Search functionality, Posts/Todos buttons, Responsive table layout |
+| **Posts** | View user posts | Details modal popup, Filtered posts by selected user |
+| **Todos** | View todo list | Completed tasks highlighted in green, Scrollable clean layout |
+| **Promotions** | Interactive tools | Animated spin wheel, Leaderboard with dynamic filters |
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Technologies & Tools Used  
 
-```bash
-ng generate --help
-```
+| Category | Description |
+|-----------|-------------|
+| **Framework** | Angular 19+ (Standalone Components + Modern Control Flow) |
+| **Reactivity** | RxJS & Signals for data flow and state management |
+| **Routing** | Angular Router for seamless page navigation |
+| **Styling** | SCSS for modular, reusable, and responsive design |
+| **Layout** | CSS Grid & Flexbox for adaptive layouts |
+| **Data Source** | JSONPlaceholder API (mock backend) |
+| **UI Elements** | Angular Material Icons for a clean, modern look |
+| **Language** | TypeScript for strong typing and maintainable logic |
 
-## Building
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Key Features at a Glance  
+- **Burger Menu & Sidebar Layout** – adaptive navigation for all screens  
+- **Real-Time Date & Time Display** – dynamically updating header clock  
+- **Live Data from JSONPlaceholder** – users, posts, and todos fetched via API  
+- **Search & Filter Features** – quick, client-side filtering for users  
+- **Animated Spin Wheel** – interactive 10-sector game with smooth rotation  
+- **Leaderboard with Dynamic Filters** – filter results by week (I, II, III, IV, or ALL)  
+- **Cross-Browser Compatibility** – tested on Chrome, Firefox, Safari, Edge  
+- **Angular 19 Modern Syntax** – leverages `@if`, `@for`, and signals for performance  
+- **Clean, Scalable Architecture** – readable code and maintainable structure 
