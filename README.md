@@ -14,16 +14,6 @@ Every component is built using **standalone Angular components**, **signals**, a
 
 
 ## Application Structure  
-The app layout consists of several key blocks:  
-
-- **Header** – Displays the site name (linked to home) and the current date & time (updates dynamically).  
-- **Sidebar Navigation** – Positioned on the left, includes buttons for:
-  - 🧍‍♂️ Users  
-  - 📝 Posts  
-  - 🎯 Promotions  
-  - (Collapses into a **burger menu** on small screens).  
-- **Main Content (Table/Card Section)** – Dynamically displays data depending on the selected route.  
-- **Footer** – Fixed at the bottom and centered, showing © 2025 Orbit.
 
 | Page | Purpose | Key Features |
 |------|----------|--------------|
