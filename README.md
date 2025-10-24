@@ -23,6 +23,7 @@ Every component is built using **standalone Angular components**, **signals**, a
 | **Promotions** | Interactive tools | Animated spin wheel, Leaderboard with dynamic filters |
 
 
+
 ## Technologies & Tools Used  
 
 | Category | Description |
@@ -35,6 +36,7 @@ Every component is built using **standalone Angular components**, **signals**, a
 | **Data Source** | JSONPlaceholder API (mock backend) |
 | **UI Elements** | Angular Material Icons for a clean, modern look |
 | **Language** | TypeScript for strong typing and maintainable logic |
+
 
 
 ## Key Features at a Glance  
