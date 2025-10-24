@@ -1,0 +1,103 @@
+:host {
+  display: block;
+}
+
+.leaderboard h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 650;
+  color: #e6eefc;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 15px;
+  border: 1px solid #343B4F;
+  background: transparent;
+  color: #c9d6ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.filter-btn.active {
+  background: rgba(203, 60, 255, 0.15);
+  border-color: rgba(203, 60, 255, 0.45);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(203, 60, 255, 0.25) inset;
+  transform: translateY(-1px);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+}
+
+.lb-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #e6eefc;
+  font-size: 14px;
+}
+
+.lb-table thead th {
+  text-align: left;
+  font-weight: 600;
+  color: #AEB9E1;
+  padding: 16px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.lb-table tbody tr:nth-child(even) {
+  background: #0B1739;
+}
+
+.lb-table tbody tr:hover {
+  background: #cb3cff19;
+}
+
+.lb-table tbody td {
+  padding: 12px 10px;
+  vertical-align: middle;
+}
+
+.dim {
+  color: #8DA1C3;
+}
+
+.muted {
+  color: #8DA1C3;
+  margin-top: 8px;
+}
+
+.chip {
+  display: inline-block;
+  min-width: 34px;
+  padding: 2px 8px;
+  border-radius: 9px;
+  border: 1px solid rgba(203, 60, 255, 0.45);
+  background: rgba(203, 60, 255, 0.12);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-align: center;
+}

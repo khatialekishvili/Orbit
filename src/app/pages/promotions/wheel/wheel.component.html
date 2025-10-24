@@ -1,0 +1,37 @@
+<section class="card wheel">
+  <h3>Wheel</h3>
+
+  <form class="controls" (submit)="$event.preventDefault(); spin()">
+    <label class="field">
+      <span>Enter the number (1–10)</span>
+      <input
+        type="number"
+        min="1" max="10"
+        [formControl]="sectorCtrl"
+        (input)="onInput($event)"
+        placeholder="ex. 7"
+      />
+    </label>
+    <div class="actions">
+      <button type="button" class="primary" (click)="spin()">Spin it</button>
+      <button type="button" class="ghost" (click)="reset()">Reset</button>
+    </div>
+  </form>
+
+  @if (sectorCtrl.invalid && (sectorCtrl.touched || sectorCtrl.dirty)) {
+    <p class="error">The specified sector could not be found.</p>
+  }
+
+  <div class="wheel-stage">
+    <div class="wheel-disc" [style.transform]="'rotate(' + rotation() + 'deg)'">
+      @for (n of labels; track n; let i = $index) {
+        <span class="label" [style.transform]="'translate(-50%,-50%) rotate(' + angleFor(i) + 'deg) translateY(-100px)'">
+          {{ n }}
+        </span>
+      }
+      <div class="hub"></div>
+    </div>
+    <mat-icon class="pin-icon">arrow_drop_down</mat-icon>
+
+  </div>
+</section>

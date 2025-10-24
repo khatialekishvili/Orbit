@@ -1,0 +1,41 @@
+<section class="users">
+  @if (loading()) {
+    <p>Loading</p>
+  } @else if (error()) {
+    <p class="error">{{ error() }}</p>
+  } @else {
+    @if (filtered().length > 0) {
+      <div class="table-wrap card">
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>First Name</th><th>Last Name</th><th>Phone</th>
+              <th>Email</th><th>Company</th><th class="right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (u of filtered(); track u.id) {
+              <tr>
+                <td data-label="First Name">{{ first(u.name) }}</td>
+                <td data-label="Last Name">{{ last(u.name) }}</td>
+                <td data-label="Phone">{{ u.phone }}</td>
+                <td class="dim" data-label="Email">{{ u.email }}</td>
+                <td data-label="Company">{{ u.company?.name }}</td>
+                <td class="right" data-label="Actions">
+                  <button class="ghost" appHoverAnimate (click)="goPosts(u.id)">Posts</button>
+                  <button class="ghost" appHoverAnimate (click)="goTodos(u.id)">Todos</button>
+                </td>
+              </tr>
+            } @empty {
+              <tr><td colspan="6" class="empty">User does not exist.</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else if (hasSearched()) {
+      <p class="empty">User does not exist.</p>
+    } @else {
+      <p class="muted">No data.</p>
+    }
+  }
+</section>

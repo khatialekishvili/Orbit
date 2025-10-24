@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  padding: 24px;
+  background: #0b1739;
+  color: #e6eefc;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.6);
+  min-width: 320px;
+  max-width: 600px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #cb3cff;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.9;
+//   margin: 0 0 20px;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button.ghost {
+  height: 39px;
+  min-width: 100px;
+  border-radius: 20px;
+  border: 1px solid #343B4F;
+  background: transparent;
+  color: #cb3cffcb;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.ghost:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}

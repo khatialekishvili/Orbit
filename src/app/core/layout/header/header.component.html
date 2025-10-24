@@ -1,0 +1,43 @@
+<mat-toolbar class="toolbar">
+  <div class="left">
+    <a routerLink="src/app/pages/users/users-page" class="brand" aria-label="Go to Users page">
+      <img [src]="imagePath" alt="Orbit logo" />
+      <h1 class="title">Orbit</h1>
+    </a>
+  </div>
+
+  <div class="center">
+    @if (showUsersUI()) {
+      <span class="section-title">User List</span> 
+      <form class="search" role="search" (submit)="$event.preventDefault()">
+        <span class="icon material-symbols-outlined" aria-hidden="true">search</span>
+
+        <input
+          #q
+          type="search"
+          [value]="userSearch.search()"
+          (input)="userSearch.set(q.value)"
+          placeholder="Search users by name, lastname, email..."
+          aria-label="Search users" />
+
+        @if (userSearch.search()) {
+          <button type="button" class="clear" (click)="clearSearch()" aria-label="Clear search">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        }
+      </form>
+    } @else {
+      <div class="center-spacer"></div>
+    }
+  </div>
+
+<div class="right">
+  <span class="date">{{ dateStr }}</span>
+  <span class="time">{{ timeStr }}</span>
+
+  <button type="button" class="burger" aria-label="Open menu" (click)="toggleMenu()">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+</div>
+
+</mat-toolbar>

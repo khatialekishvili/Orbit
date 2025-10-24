@@ -1,0 +1,39 @@
+
+<section class="card leaderboard">
+  <h3>Leaderboard</h3>
+
+  <div class="filters">
+    @for (w of weeks; track w) {
+      <button
+        class="filter-btn"
+        [class.active]="active()===w"
+        (click)="setActive(w)"
+        type="button"
+      >
+        {{ w }}
+      </button>
+    }
+  </div>
+
+  <div class="table-wrap card">
+    <table class="lb-table">
+      <thead>
+        <tr><th>CustomerId</th><th>Login</th><th>Place</th><th>Week</th></tr>
+      </thead>
+      <tbody>
+        @for (row of filtered(); track $index) {
+          <tr>
+            <td>{{ row.customerId }}</td>
+            <td class="dim">{{ row.loginName }}</td>
+            <td>{{ row.place }}</td>
+            <td><span class="chip">{{ row.week }}</span></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  @if (filtered().length === 0) {
+    <p class="muted">No records</p>
+  }
+</section>

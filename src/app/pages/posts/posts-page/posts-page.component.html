@@ -1,0 +1,64 @@
+<section class="card posts">
+  <div class="header-row">
+    <button
+      mat-icon-button
+      color="primary"
+      class="back-icon"
+      (click)="goBack()"
+      aria-label="Go back to Users Page"
+    >
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h2>Posts</h2>
+  </div>
+
+  @if (userId()) {
+    <p class="dim">Showing posts by <strong>{{ userName() }}</strong></p>
+  }
+  @if (loading()) {
+    <p>Loading…</p>
+  } @else if (error()) {
+    <p class="error">{{ error() }}</p>
+  } @else {
+    @if (!userId()) {
+      <div class="table-wrap card">
+        <table class="posts-table">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Post Title</th>
+              <th class="right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (p of posts(); track p.id) {
+              <tr>
+                <td>{{ userNameById()[p.userId] || p.userId }}</td>
+                <td class="dim">{{ p.title }}</td>
+                <td class="right">
+                  <button class="ghost" (click)="openDetails(p)">Details</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <div class="cards-grid">
+        @for (p of posts(); track p.id) {
+          <article class="post-card">
+            <header class="post-card__head">
+              <h3 class="post-card__title" title="{{ p.title }}">{{ p.title }}</h3>
+            </header>
+
+            <p class="post-card__body">{{ p.body }}</p>
+
+            <footer class="post-card__foot">
+              <button class="ghost" (click)="openDetails(p)">Details</button>
+            </footer>
+          </article>
+        }
+      </div>
+    }
+  }
+</section>

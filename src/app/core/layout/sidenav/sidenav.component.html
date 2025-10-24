@@ -1,0 +1,24 @@
+@if (layout.isOpen()) {
+  <div class="nav-backdrop" (click)="layout.close()"></div>
+}
+
+
+<nav class="side-nav" [class.open]="layout.isOpen()">
+  <a mat-button routerLink="/users" routerLinkActive="active" (click)="layout.close()">
+    <mat-icon>person</mat-icon>
+    <span>Users</span>
+    <mat-icon class="chevron">chevron_right</mat-icon>
+  </a>
+
+  <a mat-button routerLink="/posts" routerLinkActive="active" (click)="layout.close()">
+    <mat-icon>home</mat-icon>
+    <span>Posts</span>
+    <mat-icon class="chevron">chevron_right</mat-icon>
+  </a>
+
+  <a mat-button routerLink="/promotions" routerLinkActive="active" (click)="layout.close()">
+    <mat-icon>sell</mat-icon>
+    <span>Promotions</span>
+    <mat-icon class="chevron">chevron_right</mat-icon>
+  </a>
+</nav>

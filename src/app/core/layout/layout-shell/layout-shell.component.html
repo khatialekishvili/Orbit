@@ -1,0 +1,19 @@
+<div class="shell">
+  <app-header></app-header>
+
+  <div class="layout">
+<app-sidenav class="layout_sidenav"
+             [class.is-open]="layout.isOpen()"></app-sidenav>
+
+    <main class="layout_main">
+      <div class="page-container">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+  <div class="footer_inner">© 2025 Orbit</div>
+</footer>
+
+</div>
